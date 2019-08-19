@@ -3,19 +3,25 @@ class Hero:
     
     def __init__(self):
         self.backpack = 0
-        self.passage = []
+        self.labyrinth = None
         self.position = None
         self.list_item = []
     
     def move(self, direction):
         new_position = self.position + direction #la nouvelle position correspond a la position + une direction
-        if new_position in self.passage: # si la nouvelle position a un passage on change la position par un nouvelle position 
-            self.position = new_position #position = nouvelle position 
-
+        if new_position in self.labyrinth.list_passage: # si la nouvelle position a un passage on change la position par un nouvelle position 
+            self.position = new_position #position = nouvelle position
+            self.win()
 
     def loot_item(self):
         if self.position in self.list_item:
             self.backpack += 1
+    
+    def win(self):
+        if self.position == self.labyrinth.finish and self.backpack == 3:
+            print('Win!!!!!')
+        else:
+            print('Game over!!')
         
 
 class Motion:

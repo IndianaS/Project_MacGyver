@@ -29,7 +29,7 @@ class Labyrinth:
     def add_hero(self, hero):
         self.hero = hero
         self.hero.position = self.start
-        self.hero.passage = self.list_passage
+        self.hero.labyrinth = self
         self.hero.list_item = [self.syringe.position, self.needle.position, self.ether.position]
     
     def add_item(self):
@@ -37,6 +37,11 @@ class Labyrinth:
         self.syringe = Item(self.random_position[0])
         self.needle = Item(self.random_position[1])
         self.ether = Item(self.random_position[2])
+    
+    def add_guardian(self, guardian):
+        self.guardian = guardian
+        self.guardian.position = self.finish
+         
     
     def get_random_position(self):
         self.random_position = random.sample(self.list_passage, 3)
