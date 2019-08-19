@@ -22,30 +22,34 @@ class Labyrinth:
                         self.list_passage.append(ground)
                     if char == "f":
                         self.finish = Position(n_char, n_line)
-                        self.list_passage.append(self.finish)
                     if char == "s":
                         self.start = Position(n_char, n_line)
-                        self.list_passage.append(self.start)
+            self.list_passage.append(self.finish)
+            self.list_passage.append(self.start)
 
     def add_hero(self, hero):
         self.hero = hero
         self.hero.position = self.start
         self.hero.labyrinth = self
         self.hero.list_item = [
-                self.syringe.position,
-                self.needle.position,
-                self.ether.position
-            ]
+            self.syringe.position,
+            self.needle.position,
+            self.ether.position
+        ]
 
     def add_item(self):
         self.get_random_position()
-        self.syringe = Item(self.random_position[0])
-        self.needle = Item(self.random_position[1])
-        self.ether = Item(self.random_position[2])
+        self.syringe = Item(self.random_position.pop())#'pop' attribut de liste qui remplace 0, 1, 2 
+        self.needle = Item(self.random_position.pop())
+        self.ether = Item(self.random_position.pop())
 
     def add_guardian(self, guardian):
         self.guardian = guardian
         self.guardian.position = self.finish
 
     def get_random_position(self):
-        self.random_position = random.sample(self.list_passage, 3)
+        self.random_position = random.sample(self.list_passage[:-2], 3)
+        if self.start in self.random_position:
+            print("Oui, start")
+        if self.finish in self.random_position:
+            print("Oui, finish")

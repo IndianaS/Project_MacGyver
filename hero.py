@@ -12,10 +12,12 @@ class Hero:
         # si la nouvelle position a un passage on change la position par un nouvelle position
         if new_position in self.labyrinth.list_passage:
             self.position = new_position  # position = nouvelle position
+            self.loot_item()
             self.win()
 
     def loot_item(self):
         if self.position in self.list_item:
+            print('Tu a un objet!!')
             self.backpack += 1
 
     def win(self):
@@ -24,3 +26,6 @@ class Hero:
                 print('Win!!!!!')
             else:
                 print('Game over!!')
+    
+    def __repr__(self):
+        return self.position
