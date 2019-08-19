@@ -49,7 +49,3 @@ class Labyrinth:
 
     def get_random_position(self):
         self.random_position = random.sample(self.list_passage[:-2], 3)
-        if self.start in self.random_position:
-            print("Oui, start")
-        if self.finish in self.random_position:
-            print("Oui, finish")
