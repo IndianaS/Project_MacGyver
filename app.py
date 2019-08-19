@@ -1,7 +1,8 @@
 from labyrinth import Labyrinth, Position
-from hero import Hero, Motion
+from motion import Motion
 from item import Item
 from guardian import Guardian
+from hero import Hero
 
 up = Motion(0, -1)
 down = Motion(0, 1)
@@ -18,13 +19,16 @@ laby.add_hero(mcgyver)
 garde = Guardian()
 laby.add_guardian(garde)
 
-print(garde.position)
+# Position du gardien
+print('Position du gardien:', garde.position)
 
-# Position de départ
-print('Départ:', mcgyver.position)
-mcgyver.position = laby.syringe.position
+# Déplacement du héro
+print('Position de départ du héro:', mcgyver.position)
+mcgyver.move(right)
+print('Positon du hero après déplacement:', mcgyver.position, '\n')
 
 # Ramasser les objets
+mcgyver.position = laby.syringe.position
 print('Objet:', mcgyver.position)
 mcgyver.loot_item()
 print(mcgyver.backpack)
