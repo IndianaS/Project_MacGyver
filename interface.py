@@ -1,6 +1,8 @@
 import os
-from motion import up, down, right, left
+
 from event import Event
+from motion import down, left, right, up
+
 
 class Interface:
     def loop(self, hero):

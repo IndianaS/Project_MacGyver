@@ -33,15 +33,17 @@ class Labyrinth:
         self.hero.labyrinth = self
         self.hero.list_item = [
             self.syringe.position,
-            self.needle.position,
+            self.tube.position,
             self.ether.position
         ]
 
     def add_item(self):
         self.get_random_position()
-        self.syringe = Item(self.random_position.pop())#'pop' attribut de liste qui remplace 0, 1, 2 
-        self.needle = Item(self.random_position.pop())
-        self.ether = Item(self.random_position.pop())
+        # 'pop' attribut de liste qui remplace 0, 1, 2
+        self.syringe = Item(self.random_position.pop(), "pictures/syringe.png")
+        self.tube = Item(self.random_position.pop(), "pictures/tube.png")
+        self.ether = Item(self.random_position.pop(), "pictures/ether.png")
+        self.list_item = [self.syringe, self.tube, self.ether]
 
     def add_guardian(self, guardian):
         self.guardian = guardian
