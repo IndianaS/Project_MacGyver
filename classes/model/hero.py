@@ -1,5 +1,5 @@
 from .labyrinth import Position
-from .settings import *
+from classes.settings import *
 
 class Hero:
     def __init__(self):

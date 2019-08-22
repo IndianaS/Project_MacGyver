@@ -1,4 +1,4 @@
-from .settings import *
+from classes.settings import *
 
 class Guardian:
 

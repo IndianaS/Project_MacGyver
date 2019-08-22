@@ -1,8 +1,8 @@
 from pygame.locals import *
 
-from classes.guardian import Guardian
-from classes.hero import Hero
-from classes.labyrinth import Labyrinth
+from classes.model.guardian import Guardian
+from classes.model.hero import Hero
+from classes.model.labyrinth import Labyrinth
 from classes.settings import *
 
 class Display:

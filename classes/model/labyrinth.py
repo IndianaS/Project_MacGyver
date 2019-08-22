@@ -1,6 +1,7 @@
 import random
 
-from .settings import  SYRINGE_IMG, TUBE_IMG, ETHER_IMG
+from classes.settings import ETHER_IMG, SYRINGE_IMG, TUBE_IMG
+
 from .item import Item
 from .position import Position
 

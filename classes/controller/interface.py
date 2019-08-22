@@ -1,10 +1,10 @@
 import os
 import sys
-from .settings import BACKGROUND_IMG
-from pygame import KEYDOWN, K_RIGHT, K_LEFT, K_UP, K_DOWN, K_ESCAPE, QUIT
 
-# from .event import Event
-from .motion import down, left, right, up
+from pygame import K_DOWN, K_ESCAPE, K_LEFT, K_RIGHT, K_UP, KEYDOWN, QUIT
+
+from classes.model.motion import down, left, right, up
+from classes.settings import BACKGROUND_IMG
 
 
 class Interface:
