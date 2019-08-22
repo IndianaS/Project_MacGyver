@@ -1,5 +1,6 @@
 import random
 
+from .settings import  SYRINGE_IMG, TUBE_IMG, ETHER_IMG
 from .item import Item
 from .position import Position
 
@@ -41,9 +42,9 @@ class Labyrinth:
     def add_item(self):
         self.get_random_position()
         # 'pop' attribut de liste qui remplace 0, 1, 2
-        self.syringe = Item('syringe', self.random_position.pop(), "pictures/syringe.png")
-        self.tube = Item('tube', self.random_position.pop(), "pictures/tube.png")
-        self.ether = Item('ether', self.random_position.pop(), "pictures/ether.png")
+        self.syringe = Item('syringe', self.random_position.pop(), SYRINGE_IMG)
+        self.tube = Item('tube', self.random_position.pop(), TUBE_IMG)
+        self.ether = Item('ether', self.random_position.pop(), ETHER_IMG)
         self.list_item = [self.syringe, self.tube, self.ether]
 
     def add_guardian(self, guardian):

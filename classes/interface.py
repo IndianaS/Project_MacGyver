@@ -1,5 +1,6 @@
 import os
 import sys
+from .settings import BACKGROUND_IMG
 from pygame import KEYDOWN, K_RIGHT, K_LEFT, K_UP, K_DOWN, K_ESCAPE, QUIT
 
 # from .event import Event
@@ -8,11 +9,9 @@ from .motion import down, left, right, up
 
 class Interface:
     def loop(self, windows, pygame, display, hero, guardian):
-        background = pygame.image.load("pictures/background.jpg").convert()
-        picture = pygame.image.load(hero.picture).convert_alpha()
+        background = pygame.image.load(BACKGROUND_IMG).convert()
         state = True
         while state:
-            # direction = Event().event_user()
             for event in pygame.event.get():
                 if event.type == QUIT or event.type == KEYDOWN and event.key == K_ESCAPE:
                     sys.exit()
@@ -29,7 +28,6 @@ class Interface:
                 windows.blit(background, (0, 0))
                 display.display()
                 display.display_guardian(guardian)
-                windows.blit(picture, (
-                    hero.position.x * 30, hero.position.y * 30
-                ))
+                display.display_hero(hero)
+                display.display_result()
                 pygame.display.update()

@@ -1,5 +1,5 @@
 from .settings import *
-from .display import Display
+from .view.display import Display
 from .guardian import Guardian
 from .hero import Hero
 from .interface import Interface

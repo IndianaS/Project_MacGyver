@@ -1,5 +1,6 @@
 import pygame
 from pygame.locals import *
+from classes.settings import *
 
 from classes import *
 
@@ -10,10 +11,8 @@ right = Motion(1, 0)
 
 
 def __main__():
-    level_file = 'level.txt'
-
     lvl = Labyrinth()
-    lvl.read_level(level_file)
+    lvl.read_level(LEVEL_FILE)
     lvl.add_item()
     mcgyver = Hero()
     lvl.add_hero(mcgyver)
@@ -24,10 +23,10 @@ def __main__():
     windows = pygame.display.set_mode((windows_width, windows_height))
 
     # Chargement et collage du fond
-    background = pygame.image.load("pictures/background.jpg").convert()
+    background = pygame.image.load(BACKGROUND_IMG).convert()
     windows.blit(background, (0, 0))
 
-    vue = Display(pygame, windows, lvl.list_wall, lvl.list_item)
+    vue = Display(pygame, windows, lvl.list_wall, lvl.list_item, mcgyver)
     vue.display()
     vue.display_guardian(garde)
     vue.display_hero(mcgyver)

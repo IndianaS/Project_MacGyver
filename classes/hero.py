@@ -1,3 +1,5 @@
+from .labyrinth import Position
+from .settings import *
 
 class Hero:
     def __init__(self):
@@ -5,7 +7,7 @@ class Hero:
         self.position = None
         self.list_item = []
         self.backpack = 0
-        self.picture = 'pictures/MacGyver.png'
+        self.picture = HERO_IMG
 
     def move(self, direction):
         # la nouvelle position correspond a la position + une direction
@@ -14,22 +16,23 @@ class Hero:
         if new_position in self.labyrinth.list_passage:
             self.position = new_position  # position = nouvelle position
             self.catch_item()
-            self.display_win()
+            # self.win_condition()
 
     def catch_item(self):
         for item in self.list_item:
             if self.position == item.position and item.looted != 1:
                 print(f'Tu a un objet!! {item}')
                 item.looted = 1
-                item.picture = 'pictures/vide.png'
+                x = self.backpack
+                item.position = Position(x, 15)
                 self.backpack += 1
 
-    def display_win(self):
+    def win_condition(self):
         if self.position == self.labyrinth.finish:
             if self.backpack == 3:
-                print('Win!!!!!')
+                return 1
             else:
-                print('Game over!!')
+                return 0
 
     def __repr__(self):
         return self.position
