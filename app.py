@@ -1,8 +1,8 @@
 import pygame
 from pygame.locals import *
-from classes.settings import *
 
 from classes import *
+from classes.settings import *
 
 up = Motion(0, -1)
 down = Motion(0, 1)
@@ -19,10 +19,10 @@ def __main__():
     garde = Guardian()
     lvl.add_guardian(garde)
 
-    # Ouverture de la fenêtre Pygame
+    # Opening the pygame window
     windows = pygame.display.set_mode((windows_width, windows_height))
 
-    # Chargement et collage du fond
+    # Loading and gluing the background
     background = pygame.image.load(BACKGROUND_IMG).convert()
     windows.blit(background, (0, 0))
 
@@ -36,10 +36,10 @@ def __main__():
     # Window title
     pygame.display.set_caption(window_title)
 
-    # Rafraîchissement de l'écran
+    # Refresh the screen
     pygame.display.update()
 
-
+    # Game loop speed limit
     pygame.time.Clock().tick(30)
     interface.loop(windows, pygame, vue, mcgyver, garde)
 

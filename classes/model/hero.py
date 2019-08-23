@@ -1,5 +1,7 @@
-from .labyrinth import Position
 from classes.settings import *
+
+from .labyrinth import Position
+
 
 class Hero:
     def __init__(self):
@@ -10,13 +12,11 @@ class Hero:
         self.picture = HERO_IMG
 
     def move(self, direction):
-        # la nouvelle position correspond a la position + une direction
         new_position = self.position + direction
-        # si la nouvelle position a un passage on change la position par un nouvelle position
         if new_position in self.labyrinth.list_passage:
-            self.position = new_position  # position = nouvelle position
+            self.position = new_position
             self.catch_item()
-            # self.win_condition()
+            
 
     def catch_item(self):
         for item in self.list_item:

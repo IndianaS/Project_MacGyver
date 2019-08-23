@@ -1,5 +1,5 @@
-# import pygame
 
+#Level of labyrinth, txt file
 LEVEL_FILE = 'level/level.txt'
 
 #Window title

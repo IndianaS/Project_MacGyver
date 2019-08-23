@@ -1,7 +1,7 @@
 
 
 class Motion:
-    # donne un deplacement en direction x, direction y pour le deplacemnt du hero
+    
     def __init__(self, dx, dy):
         self.dx = dx
         self.dy = dy

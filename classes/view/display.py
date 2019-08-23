@@ -5,8 +5,9 @@ from classes.model.hero import Hero
 from classes.model.labyrinth import Labyrinth
 from classes.settings import *
 
+
 class Display:
-    '''Description de la classe'''
+    '''Class that displays the pictures'''
 
     def __init__(self, pygame, windows, list_wall, list_item, hero):
         self.windows = windows
@@ -37,7 +38,9 @@ class Display:
         coordinate = (hero.position.x * 30, hero.position.y * 30)
         picture = self.pygame.image.load(hero.picture).convert_alpha()
         self.windows.blit(picture, coordinate)
-
+        
+    '''Method that checks the victory condition for end of game display'''
+    
     def display_result(self):
         if self.hero.win_condition() == 1:
             self.windows.blit(self.win, (0, 0))

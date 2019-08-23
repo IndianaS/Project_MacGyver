@@ -8,6 +8,9 @@ from classes.settings import BACKGROUND_IMG
 
 
 class Interface:
+    
+    '''Class that gives the possibility of moving the hero'''
+    
     def loop(self, windows, pygame, display, hero, guardian):
         background = pygame.image.load(BACKGROUND_IMG).convert()
         state = True

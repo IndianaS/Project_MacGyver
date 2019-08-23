@@ -1,5 +1,6 @@
 from classes.settings import *
 
+
 class Guardian:
 
     def __init__(self):

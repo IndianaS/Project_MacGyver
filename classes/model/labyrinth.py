@@ -7,12 +7,17 @@ from .position import Position
 
 
 class Labyrinth:
+    
+    '''Class that uses liste for reading the txt file '''
+    
     def __init__(self):
         self.list_wall = []
         self.list_passage = []
         self.finish = None
         self.start = None
 
+    '''Methode that reads the txt file by line, and gives a number to each line and character'''
+    
     def read_level(self, level_file):
         with open(level_file, 'r') as level:
             for n_line, line in enumerate(level):
@@ -30,6 +35,8 @@ class Labyrinth:
             self.list_passage.append(self.finish)
             self.list_passage.append(self.start)
 
+    '''Method that adds the hero on the labyrinth'''
+    
     def add_hero(self, hero):
         self.hero = hero
         self.hero.position = self.start
@@ -40,17 +47,22 @@ class Labyrinth:
             self.ether
         ]
 
+    '''Method that adds objects to the labyrinth'''
+    
     def add_item(self):
         self.get_random_position()
-        # 'pop' attribut de liste qui remplace 0, 1, 2
         self.syringe = Item('syringe', self.random_position.pop(), SYRINGE_IMG)
         self.tube = Item('tube', self.random_position.pop(), TUBE_IMG)
         self.ether = Item('ether', self.random_position.pop(), ETHER_IMG)
         self.list_item = [self.syringe, self.tube, self.ether]
 
+    '''Method that adds the guardian on the labyrinth'''
+    
     def add_guardian(self, guardian):
         self.guardian = guardian
         self.guardian.position = self.finish
 
+    '''Method that selects three passages in the pass list'''
+    
     def get_random_position(self):
         self.random_position = random.sample(self.list_passage[:-2], 3)
