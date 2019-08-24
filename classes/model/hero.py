@@ -20,7 +20,7 @@ class Hero:
             
 
     def catch_item(self):
-        '''Gives the possibility to pick up the object then the stock in backpack'''
+        '''Pick up an object then increment the backpack'''
         for item in self.list_item:
             if self.position == item.position and item.looted != 1:
                 print(f'Tu a un objet!! {item}')
