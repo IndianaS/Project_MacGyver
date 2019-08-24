@@ -7,7 +7,6 @@ from .position import Position
 
 
 class Labyrinth:
-    
     '''Class that uses lists to store the file.txt'''
     
     def __init__(self):
