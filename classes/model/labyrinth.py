@@ -8,7 +8,7 @@ from .position import Position
 
 class Labyrinth:
     
-    '''Class that uses liste for reading the txt file '''
+    '''Class that uses lists to store the file.txt'''
     
     def __init__(self):
         self.list_wall = []
@@ -16,9 +16,9 @@ class Labyrinth:
         self.finish = None
         self.start = None
 
-    '''Methode that reads the txt file by line, and gives a number to each line and character'''
     
     def read_level(self, level_file):
+        '''Read text file line by line and create Position object for each character'''
         with open(level_file, 'r') as level:
             for n_line, line in enumerate(level):
                 for n_char, char in enumerate(line):
@@ -35,9 +35,9 @@ class Labyrinth:
             self.list_passage.append(self.finish)
             self.list_passage.append(self.start)
 
-    '''Method that adds the hero on the labyrinth'''
-    
+  
     def add_hero(self, hero):
+        '''Adds the hero on the labyrinth'''
         self.hero = hero
         self.hero.position = self.start
         self.hero.labyrinth = self
@@ -47,22 +47,22 @@ class Labyrinth:
             self.ether
         ]
 
-    '''Method that adds objects to the labyrinth'''
     
     def add_item(self):
+        '''Adds objects to the labyrinth'''
         self.get_random_position()
         self.syringe = Item('syringe', self.random_position.pop(), SYRINGE_IMG)
         self.tube = Item('tube', self.random_position.pop(), TUBE_IMG)
         self.ether = Item('ether', self.random_position.pop(), ETHER_IMG)
         self.list_item = [self.syringe, self.tube, self.ether]
 
-    '''Method that adds the guardian on the labyrinth'''
     
     def add_guardian(self, guardian):
+        '''Adds the guardian on the labyrinth'''
         self.guardian = guardian
         self.guardian.position = self.finish
 
-    '''Method that selects three passages in the pass list'''
-    
+   
     def get_random_position(self):
+        '''Selects three passages in the pass list'''
         self.random_position = random.sample(self.list_passage[:-2], 3)

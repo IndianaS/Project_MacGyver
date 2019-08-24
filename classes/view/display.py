@@ -30,18 +30,19 @@ class Display:
             self.windows.blit(picture, coordinate)
 
     def display_guardian(self, guardian):
+        '''Guardian display'''
         coordinate = (guardian.position.x * 30, guardian.position.y * 30)
         picture = self.pygame.image.load(guardian.picture).convert_alpha()
         self.windows.blit(picture, coordinate)
 
     def display_hero(self, hero):
+        '''Hero display'''
         coordinate = (hero.position.x * 30, hero.position.y * 30)
         picture = self.pygame.image.load(hero.picture).convert_alpha()
         self.windows.blit(picture, coordinate)
         
-    '''Method that checks the victory condition for end of game display'''
-    
     def display_result(self):
+        '''Method that checks the victory condition for end of game display'''
         if self.hero.win_condition() == 1:
             self.windows.blit(self.win, (0, 0))
         elif self.hero.win_condition() == 0:
