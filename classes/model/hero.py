@@ -23,7 +23,7 @@ class Hero:
         '''Pick up an object then increment the backpack'''
         for item in self.list_item:
             if self.position == item.position and item.looted != 1:
-                print(f'Tu a un objet!! {item}')
+                print(f'You have an object!! {item}')
                 item.looted = 1
                 x = self.backpack
                 item.position = Position(x, 15)
