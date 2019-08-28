@@ -1,6 +1,13 @@
 import pygame
 
-from macgyver import Labyrinth, Hero, Guardian, Display, Interface
+# from macgyver import Labyrinth, Hero, Guardian, Display, Interface
+
+from macgyver.model.guardian import Guardian
+from macgyver.model.hero import Hero
+from macgyver.model.labyrinth import Labyrinth
+from macgyver.view.display import Display
+from macgyver.controller.interface import Interface
+
 from macgyver.settings import LEVEL_FILE, BACKGROUND_IMG,\
     window_title, windows_height, windows_width
 
