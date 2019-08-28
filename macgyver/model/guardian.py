@@ -1,4 +1,4 @@
-from classes.settings import *
+from macgyver.settings import GUARDIAN_IMG
 
 
 class Guardian:

@@ -1,22 +1,22 @@
-import os
 import sys
 
 from pygame import K_DOWN, K_ESCAPE, K_LEFT, K_RIGHT, K_UP, KEYDOWN, QUIT
 
-from classes.model.motion import down, left, right, up
-from classes.settings import BACKGROUND_IMG
+from macgyver.model.motion import down, left, right, up
+from macgyver.settings import BACKGROUND_IMG
 
 
 class Interface:
-    
+
     '''Class that gives the possibility of moving the hero'''
-    
+
     def loop(self, windows, pygame, display, hero, guardian):
         background = pygame.image.load(BACKGROUND_IMG).convert()
         state = True
         while state:
             for event in pygame.event.get():
-                if event.type == QUIT or event.type == KEYDOWN and event.key == K_ESCAPE:
+                if event.type == QUIT \
+                        or event.type == KEYDOWN and event.key == K_ESCAPE:
                     sys.exit()
                 elif event.type == KEYDOWN:
                     if event.key == K_RIGHT:

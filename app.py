@@ -1,13 +1,8 @@
 import pygame
-from pygame.locals import *
 
-from classes import *
-from classes.settings import *
-
-up = Motion(0, -1)
-down = Motion(0, 1)
-left = Motion(-1, 0)
-right = Motion(1, 0)
+from macgyver import Labyrinth, Hero, Guardian, Display, Interface
+from macgyver.settings import LEVEL_FILE, BACKGROUND_IMG,\
+    window_title, windows_height, windows_width
 
 
 def __main__():

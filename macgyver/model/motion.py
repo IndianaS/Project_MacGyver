@@ -1,13 +1,14 @@
 
 
 class Motion:
-    
+
     def __init__(self, dx, dy):
         self.dx = dx
         self.dy = dy
 
     def __repr__(self):
         return f"Motion(x={self.dx}, y={self.dy})"
+
 
 up = Motion(0, -1)
 down = Motion(0, 1)

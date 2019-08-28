@@ -1,4 +1,4 @@
-from classes.settings import *
+from macgyver.settings import HERO_IMG
 
 from .labyrinth import Position
 
@@ -17,7 +17,6 @@ class Hero:
         if new_position in self.labyrinth.list_passage:
             self.position = new_position
             self.catch_item()
-            
 
     def catch_item(self):
         '''Pick up an object then increment the backpack'''
@@ -30,7 +29,10 @@ class Hero:
                 self.backpack += 1
 
     def win_condition(self):
-        '''Victory condition depending on the content of the backpack and the position'''
+        '''
+        Victory condition depending on the
+        content of the backpack and the position
+        '''
         if self.position == self.labyrinth.finish:
             if self.backpack == 3:
                 return 1

@@ -6,4 +6,3 @@ from .controller.interface import Interface
 from .model.item import Item
 from .model.labyrinth import Labyrinth, Position
 from .model.motion import Motion
-

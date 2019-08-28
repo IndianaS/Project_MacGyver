@@ -1,9 +1,4 @@
-from pygame.locals import *
-
-from classes.model.guardian import Guardian
-from classes.model.hero import Hero
-from classes.model.labyrinth import Labyrinth
-from classes.settings import *
+from macgyver.settings import WIN_IMG, LOSE_IMG, WALL_IMG
 
 
 class Display:
@@ -40,7 +35,7 @@ class Display:
         coordinate = (hero.position.x * 30, hero.position.y * 30)
         picture = self.pygame.image.load(hero.picture).convert_alpha()
         self.windows.blit(picture, coordinate)
-        
+
     def display_result(self):
         '''Method that checks the victory condition for end of game display'''
         if self.hero.win_condition() == 1:

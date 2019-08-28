@@ -1,6 +1,6 @@
 import random
 
-from classes.settings import ETHER_IMG, SYRINGE_IMG, TUBE_IMG
+from macgyver.settings import ETHER_IMG, SYRINGE_IMG, TUBE_IMG
 
 from .item import Item
 from .position import Position
@@ -8,16 +8,18 @@ from .position import Position
 
 class Labyrinth:
     '''Class that uses lists to store the file.txt'''
-    
+
     def __init__(self):
         self.list_wall = []
         self.list_passage = []
         self.finish = None
         self.start = None
 
-    
     def read_level(self, level_file):
-        '''Read text file line by line and create Position object for each character'''
+        '''
+        Read text file line by line and
+        create Position object for each character
+        '''
         with open(level_file, 'r') as level:
             for n_line, line in enumerate(level):
                 for n_char, char in enumerate(line):
@@ -34,7 +36,6 @@ class Labyrinth:
             self.list_passage.append(self.finish)
             self.list_passage.append(self.start)
 
-  
     def add_hero(self, hero):
         '''Adds the hero on the labyrinth'''
         self.hero = hero
@@ -46,7 +47,6 @@ class Labyrinth:
             self.ether
         ]
 
-    
     def add_item(self):
         '''Adds objects to the labyrinth'''
         self.get_random_position()
@@ -55,13 +55,11 @@ class Labyrinth:
         self.ether = Item('ether', self.random_position.pop(), ETHER_IMG)
         self.list_item = [self.syringe, self.tube, self.ether]
 
-    
     def add_guardian(self, guardian):
         '''Adds the guardian on the labyrinth'''
         self.guardian = guardian
         self.guardian.position = self.finish
 
-   
     def get_random_position(self):
         '''Selects three passages in the pass list'''
         self.random_position = random.sample(self.list_passage[:-2], 3)
