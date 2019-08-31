@@ -2,6 +2,10 @@
 
 class Position:
     def __init__(self, pos_x, pos_y):
+        '''
+        Object responsible for representing
+        the coordinates of a box
+        '''
         self.y = pos_y
         self.x = pos_x
 

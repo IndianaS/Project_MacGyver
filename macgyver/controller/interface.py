@@ -11,6 +11,7 @@ class Interface:
     '''Class that gives the possibility of moving the hero'''
 
     def loop(self, windows, pygame, display, hero, guardian):
+        '''Main loop of the game'''
         background = pygame.image.load(BACKGROUND_IMG).convert()
         state = True
         while state:

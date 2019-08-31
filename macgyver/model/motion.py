@@ -3,6 +3,7 @@
 class Motion:
 
     def __init__(self, dx, dy):
+        '''Object responsible for a direction in x and y'''
         self.dx = dx
         self.dy = dy
 

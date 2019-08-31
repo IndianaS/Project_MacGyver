@@ -10,6 +10,7 @@ class Labyrinth:
     '''Class that uses lists to store the file.txt'''
 
     def __init__(self):
+        '''Storing the labyrinth structure as a coordinates in lists'''
         self.list_wall = []
         self.list_passage = []
         self.finish = None

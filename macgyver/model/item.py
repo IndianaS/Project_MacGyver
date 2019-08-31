@@ -2,6 +2,7 @@
 
 class Item:
     def __init__(self, name, position, picture):
+        '''Responsible for objects recoverable by the player'''
         self.position = position
         self.picture = picture
         self.name = name

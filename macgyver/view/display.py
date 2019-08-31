@@ -14,6 +14,7 @@ class Display:
         self.hero = hero
 
     def display(self):
+        '''Wall display'''
         for position in self.list_wall:
             coordinate = (position.x * 30, position.y * 30)
             wall = self.pygame.image.load(WALL_IMG).convert()

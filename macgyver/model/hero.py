@@ -5,6 +5,10 @@ from .labyrinth import Position
 
 class Hero:
     def __init__(self):
+        '''
+        Store labyrinth instance to give
+        access to the available passages
+        '''
         self.labyrinth = None
         self.position = None
         self.list_item = []
